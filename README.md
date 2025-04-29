@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="picpose_logo.png" alt="PicPose Logo" width="200"/>
+  <img src="https://github.com/user-attachments/assets/3ab20da2-a2a3-40ee-8a47-3b8557dc2402" alt="PicPose Logo" width="200"/>
 </p>
 
 # PicPose: Intelligent Pose Suggestion for Better Photos
@@ -55,6 +55,14 @@ Backend
 - Reads `final_scores.csv` and a JSON of swipe feedback to learn preference order.
 - Outputs `ranknet_updated_scores.csv`.
 
+### Running fineTuning.py
+####  Inputs
+•⁠  ⁠*images/* folder (organized by location)
+•⁠  ⁠⁠final_scores.csv ⁠ (contains: ⁠ id ⁠, ⁠ aesthetic_score ⁠, ⁠ pose_score ⁠, ⁠ final_score⁠)
+•⁠  ⁠User feedback (likes/dislikes per image)
+#### Output
+•⁠  `⁠ranknet_updated_scores.csv` - final rankings after batch processing
+
 ### `app.py`
 - Receives the user image, location image, and desired energy level from the PicPose iOS app.
 - Uses a large language model (LLM) to generate metadata and calls the `process_input_object` function to retrieve the top 5 recommended images.
@@ -84,7 +92,7 @@ Backend
 }
 ```
 
-## How to Run
+## How to Install and Run
 
 ### Backend
 
@@ -108,6 +116,25 @@ xcode-select --install
 
 - Load the PicPose_app project into xcode ide and run the app.
 - Change backend server address and port (in `UploadPageView.swift` at line 315) accordingly if needed.
+
+# Installing PicPose App (iOS)
+
+This project provides an ⁠ .ipa ⁠ file for manual installation.
+
+---
+
+## How to Install App on iOS device
+
+1.⁠ ⁠Download the ⁠ PicPose.ipa ⁠ file from this repository.
+
+2.⁠ ⁠Install it using one of the following:
+   - *AltStore*
+   - *Xcode*
+
+3.⁠ ⁠Trust the app developer if prompted under:  
+   *Settings → General → Device Management*
+
+We didn’t publish in the Appstore because of several restrictions.
 
 ## Credits
 MediaPipe Pose Estimation
